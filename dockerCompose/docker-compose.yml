@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web-contents:/usr/share/nginx/htmp
+networks:
+  my-private-network:
+    driver: bridge
+    ipam:
+      driver: default
